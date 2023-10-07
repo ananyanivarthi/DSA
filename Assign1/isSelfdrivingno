@@ -1,0 +1,30 @@
+package DSA_assign1;
+
+
+public class IsSelfdrivingno {
+    public static void main(String[] args) {
+        int left = 1;
+        int right = 22;
+
+        System.out.println("Self-dividing numbers in the range [" + left + ", " + right + "]:");
+        for (int num = left; num <= right; num++) {
+            if (isSelfdrivingno(num)) {
+                System.out.print(num + " ");
+            }
+        }
+    }
+
+    public static boolean isSelfdrivingno(int num) {
+        int originalNum = num;
+        while (num > 0) {
+            int digit = num % 10;
+            if (digit == 0 || originalNum % digit != 0) {
+                return false;
+            }
+            num /= 10;
+        }
+        return true;
+    }
+
+}
+
