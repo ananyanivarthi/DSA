@@ -1,0 +1,23 @@
+package assignment2;
+
+public class consecutive1 {
+    public static void main(String[] args) {
+        int[] arr = {1,0,1,1,0,1};
+        int result = Consecutive_1(arr);
+        System.out.println("Consecutive 1's are:"+result);
+    }
+    public static int Consecutive_1(int[] arr){
+        int count=0;
+        int ans=0;
+        for(int i:arr){
+            if(i==1){
+                count++;
+                ans = Math.max(ans,count);
+            }
+            else{
+                count = 0;
+            }
+        }
+        return ans;
+    }
+}
